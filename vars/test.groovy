@@ -16,7 +16,8 @@ def getBuildGitInfo(Integer buildNumber) {
             print "#########################"
 	    print datos
             print "#########################"
-	    def affectedPathsData = datos.getAffectedPaths().join()
+	    
+	    def affectedPathsData = datos.getAffectedPaths()
             gitInfo = gitInfo + "Commit ID(Revision): " + datos.getCommitId() + "\nCommit Message: " + datos.getMsg() + "\nAffected Path: " + affectedPathsData + "\nAuthor: " + datos.getAuthor() + "\n"
         }
     }
