@@ -13,8 +13,10 @@ def getBuildGitInfo(Integer buildNumber) {
     
     buildJob.getBuildByNumber(buildNumber).getChangeSets().each { elem->
         elem.each { datos->
-
-            def affectedPathsData = datos.getAffectedPaths().join()
+            print "#########################"
+	    print datos
+            print "#########################"
+	    def affectedPathsData = datos.getAffectedPaths().join()
             gitInfo = gitInfo + "Commit ID(Revision): " + datos.getCommitId() + "\nCommit Message: " + datos.getMsg() + "\nAffected Path: " + affectedPathsData + "\nAuthor: " + datos.getAuthor() + "\n"
         }
     }
