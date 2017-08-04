@@ -1,3 +1,4 @@
+
 pipeline {
 	agent any
 	stages {
@@ -7,7 +8,7 @@ pipeline {
 load 'vars/test.groovy' 
 
 script {
-	print getBuildGitInfo($BuildNumber.toInteger())
+	print getBuildGitInfo(params.BuildNumber.toInteger())
 }
 			}
 		}
