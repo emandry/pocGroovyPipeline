@@ -19,3 +19,5 @@ def getBuildGitInfo(Integer buildNumber) {
     }
     return gitInfo
 }
+
+print getBuildGitInfo(params.BuildNumber.toInteger())
